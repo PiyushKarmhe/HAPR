@@ -1,0 +1,180 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock title %}
+{% block body %}
+<div class="d-flex justify-content-center align-items-center my-4 mt-5" style="background-color: #f3e9e9;">
+    <div class="container my-5 mt-5 mx-auto pb-3">
+        <div class="row justify-content-md-center ">
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        {% comment %} style="height:558px;" {% endcomment %}
+                        <img src="https://images.unsplash.com/photo-1515871204537-49a5fe66a31f?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=700&ixid=MnwxfDB8MXxyYW5kb218MHx8aGVhcnR8fHx8fHwxNjQ3Njk0NjYw&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1400" class="d-block w-100" alt="..." >
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://images.unsplash.com/photo-1444459094717-a39f1e3e0903?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=700&ixid=MnwxfDB8MXxyYW5kb218MHx8bnV0cml0aW9ufHx8fHx8MTY0NzM2Mjk2NQ&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1400" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://images.unsplash.com/photo-1607962837359-5e7e89f86776?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=700&ixid=MnwxfDB8MXxyYW5kb218MHx8aGVhbHRofHx8fHx8MTY0NzM2MzI5Nw&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1400" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+            <br>
+            </h2>
+            <div class="container">
+                <div class="row">
+                    <div class="col-5">
+                        <div class="accordion accordion-flush my-4 mx-auto justify-content-md-center rounded" id="accordionFlushExample" >
+                            <div class="accordion-item mt-2 rounded">
+                                <h2 class="accordion-header rounded" id="flush-heading1">
+                                    <button class="accordion-button collapsed rounded" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse1" aria-expanded="false" aria-controls="flush-collapse1" style="background-color: rgba(197,72,84,0.8);">
+                                        What is HAPR?
+                                    </button>
+                                </h2>
+                                <div id="flush-collapse1" class="accordion-collapse collapse rounded" aria-labelledby="flush-heading1" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">HAPR helps you to know about your health condition,
+                                        or about any of the illness you might be suffering from without having the
+                                        knowledge of it. The user only have to give their symptoms to it, and HAPR
+                                        will automatically predict, what are the health issues one might be facing.
+                                        It is user-friendly and anyone can easily use it without acquiring much
+                                        knowledge. </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item mt-2 rounded">
+                                <h2 class="accordion-header rounded" id="flush-headingOne">
+                                    <button class="accordion-button collapsed rounded" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne" style="background-color: rgba(197,72,84,0.8);">
+                                        Why to use HAPR?
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseOne" class="accordion-collapse collapse rounded" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">HAPR helps you to know about your health condition,
+                                        or about any of the illness you might be suffering from without having the
+                                        knowledge of it. The user only have to give their symptoms to it, and HAPR
+                                        will automatically predict, what are the health issues one might be facing.
+                                        It is user-friendly and anyone can easily use it without acquiring much
+                                        knowledge. </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item mt-2 rounded">
+                                <h2 class="accordion-header rounded" id="flush-headingTwo">
+                                    <button class="accordion-button collapsed rounded" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo" style="background-color: rgba(197,72,84,0.8);">
+                                        How we can help?
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseTwo" class="accordion-collapse collapse rounded" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">HAPR not only predicts and tells you about the
+                                        health problems
+                                        you might be facing but it also helps you to set an appointment with an
+                                        appropriate
+                                        doctor according to the issue. It will provide the doctor with the
+                                        information you have entered
+                                        on HAPR and then the doctor will treat you accordingly.You don't have to
+                                        worry much about your health issues and also about setting up appointments
+                                        with
+                                        doctors. 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item mt-2 rounded">
+                                <h2 class="accordion-header rounded" id="flush-headingThree">
+                                    <button class="accordion-button collapsed rounded" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree" style="background-color: rgba(197,72,84,0.8);">
+                                        How does HAPR work?
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseThree" class="accordion-collapse collapse rounded" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">The user has to enter the symptoms they are facing
+                                        and then HAPR looks into it and makes a list of probable diseases
+                                        accordingly.The user can know the probabilty of diseases they might be
+                                        suffering from according the symptoms. Depending upon the severity of the
+                                        illness, HAPR will help them set up an appointment with the best doctor
+                                        possible who's details will be communicated to the user via an email. </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% comment %} <div class="col-sm-1"></div> {% endcomment %}
+                    <div class="col-7">
+                        {% comment %} style="border: 4px solid rgba(197,72,84,0.8);" {% endcomment %}
+                        <div class="card mt-4 rounded" style="border: 4px solid #f3e9e9;" >
+                            <div class="card-body rounded" style="border: 4px solid #f3e9e9; background-color: #f3e9e9;">
+                                <span class="badge bg-danger bg-opacity-75 p-1">
+                                    <h4>Wanna know about your health!!</h4>
+                                </span> <br>  <p style="margin: 0.2em 0.5em;">Check it here. HAPR will help you to know it better.</p>
+                            </div>
+                        </div>
+                        {% comment %} <div class="alert alert-danger mb-1 mt-4" role="alert" style="background-color: #E0DC10;">
+                            Wanna know about your health!!<br> Check it here. HAPR will help you to know it better.
+                        </div> {% endcomment %}
+                        {% comment %} border: 4px solid rgba(197,72,84,0.8); {% endcomment %}
+                        <div class="card rounded" style="margin-top: 0.1em; border: 4px solid #f3e9e9;">
+                            <div class="card-body rounded" style="border: 4px solid #f3e9e9;background-color: #f3e9e9;">
+                                <span class="badge bg-danger bg-opacity-75 p-1 shadow-lg">
+                                    <h4 >Click on the button below!!!</h4>
+                                </span> <br>  <p style="margin: 0.2em 0.5em;">To know more about your health conditions and what is best for you.</p>
+                            </div>
+                        </div>
+                        <br>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <style>
+                .rain {
+                    margin-top: 0px;
+                    margin-bottom: 3px;
+                    font-family: sans-serif;
+                    font-size: 3rem;
+                    background: linear-gradient(to right, #ef5350, #f48fb1, #7e57c2, #2196f3, #26c6da, #43a047, #f9a825, #ff5722);
+                    {% comment %} #eeff41, {% endcomment %}
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    text-align:center;
+                  }
+            </style>
+            <h1 style="color: rgba(197,72,84,0.95); font: size 20px;" class="mx-auto my-2 rain"><p><b><i> "  Health is not valued till sickness comes!! "</i></b></p></h1>
+        </div>
+        <br>
+        <style>
+            .abc{
+              background-color: #EC4915; 
+              border: 0.05em solid black; 
+              text-align:center;
+              color: white;
+            }
+            .abc:hover{
+                background-color: rgba(190,130,4,1); 
+                background: linear-gradient(to right, #ef5350, #f48fb1, #7e57c2, #2196f3, #26c6da, #43a047, #eeff41, #f9a825, #ff5722);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                {% comment %} color: yellow; {% endcomment %}
+                background-color: rgba(190,130,4,1);
+            }
+        </style>
+        {% comment %} <div class="row justify-content-md-center mx-auto my-4">
+            <button class="rounded-pill shadow-lg abc " style="background-color: #EC4915; padding: 15px 30px; text-align: center; color: white; text-decoration: none; display: inline-block; font-size: 22px; ">
+                <span class="bg-opacity-100 mx-2 my-1 "><b>Prediction</b></span>
+            </button>
+        </div> {% endcomment %}
+        <div class="row justify-content-md-center mx-auto my-4">
+            <div class="col-8">
+                <a href="/services" style="text-decoration: none;"><h3 class=" rounded-pill shadow-lg abc" style=""><b>Prediction</b></h3></a>
+            </div>
+        </div>
+        {% comment %} <h3 class="display-6 mt-4 shadow p-3 mb-5 bg-dark text-white rounded-pill"><b>Skills</b></h3> {% endcomment %}
+    </div>
+</div>
+{% endblock body %}

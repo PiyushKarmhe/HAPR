@@ -1,0 +1,635 @@
+{% extends 'base.html' %}
+{% block title %}Services{% endblock title %}
+{% block body %}
+<style>
+{% comment %} @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"); {% endcomment %}
+
+* {
+padding: 0;
+margin: 0;
+}
+
+.result-body {
+min-height: 100vh;
+{% comment %} background-image: url("https://images.unsplash.com/photo-1627842468152-62f95538037a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx2aXN1YWwtc2VhcmNofDE2fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60");
+background-position: center;
+
+background-size: cover;
+background-repeat: no-repeat;
+font-family: "Roboto", sans-serif; {% endcomment %}
+padding:1em;
+display: flex;
+{% comment %} place-items: center; {% endcomment %}
+align-items: center;
+justify-content: space-around;
+position: relative;
+} 
+
+.cards {
+margin-top: 5em;
+backdrop-filter: blur(5px) saturate(124%);
+-webkit-backdrop-filter: blur(5px) saturate(124%);
+background-color: rgba(197,72,84,0.9);
+{% comment %} rgba(17, 25, 40, 0.9); {% endcomment %}
+border-radius: 12px;
+border: 1px solid rgba(255, 255, 255, 0.125);
+padding: 1rem 1rem;
+max-height: 580px;
+min-height: 200px;
+max-width: 1200px;
+margin-bottom:1em;
+overflow-y: scroll;
+-ms-overflow-style: none; /* IE and Edge */
+scrollbar-width: none; /* Firefox */
+}
+.cards::-webkit-scrollbar {
+display: none;
+}
+
+.cards-heading {
+font-size: 8vmin;
+color: white;
+text-align: center;
+{% comment %} margin-bottom: 40px; {% endcomment %}
+/* padding:0.2em; */
+border-bottom:3px solid white;
+border-radius:1px;
+margin-bottom: 0.5em;
+}
+
+/* .cards-heading::after {
+opacity: 0.9;
+content: "";
+position: absolute;
+align-items: center;
+width: 100%;
+left: 0;
+margin: 0rem 0;
+border: 3px solid white;
+padding: 0px;
+{% comment %} border: 1px solid white;
+padding: 0; {% endcomment %}
+border-radius:1px;
+} */
+
+.info {
+display: flex;
+align-items: center;
+justify-content: space-between;
+position: relative;
+}
+/* .info:hover{
+cursor: pointer;
+background-color: rgba(17, 25, 40, 0.5);
+} */
+/* .info:hover::after{
+cursor: pointer;
+background-color: rgba(17, 25, 40, 0.5);
+} */
+.info-socials > i:hover {
+color: green;
+font-size: 3.9vw;
+cursor: pointer;
+}
+.info-body {
+display: flex;
+align-items: center;
+justify-content: space-between;
+
+width: 80%;
+}
+
+.info-socials {
+color: #6ebf8b;
+display: flex;
+flex-flow: row wrap; 
+justify-content: space-around;
+width : 7.7vmax;
+}
+.info-socials > i {
+color: #6ebf8b;
+font-size: 3.8vmax;
+/*   flex-flow: column wrap; */ 
+}
+
+{% comment %} .info::after {
+opacity: 0.7;
+content: "";
+position: absolute;
+width: 100%;
+bottom: 0;
+border: 1px solid white;
+padding: 0;
+border-radius:1px;
+margin: -0.8rem 0;
+} {% endcomment %}
+{% comment %} .info:last-child::after {
+display: none;
+} {% endcomment %}
+.info + .info {
+margin-top: 1.5rem;
+}
+{% comment %} .info:hover{
+cursor: pointer;
+border-radius: 12px;
+padding:0.5rem;
+margin-top: 1.0rem;
+margin-bottom:-0.50rem;
+/*   margin-bottom:-0.5rem; */
+background-color: rgba(17, 25, 40, 0.5);
+} {% endcomment %}
+{% comment %} .info:hover::after{
+/*   margin: -0.45rem 0; */
+opacity: 0.5;
+content: "";
+position: absolute;
+width: 97%;
+bottom: 0;
+border: 1px solid grey;
+padding: 0;
+margin: -0.35rem 0;
+border: 1px solid white;
+padding: 0;
+border-radius:1px;
+} {% endcomment %}
+.info:first-child::before{
+margin: 10rem 0;
+background: black;
+}
+.info img {
+aspect-ratio: 1;
+width: 11%;
+border-radius: 50%;
+/* postion: relative; */
+box-shadow: 5px 5px;
+}
+.sno {
+{% comment %} aspect-ratio: 1; {% endcomment %}
+width: 11%;
+font-size:clamp(1rem, 5vw, 3rem);
+border-radius: 50%;
+/* postion: relative; */
+{% comment %} box-shadow: 5px 5px; {% endcomment %}
+color:white;
+padding-left: 0.5em;
+}
+
+{% comment %} .info img::before {
+content: "";
+position: absolute;
+width: 100%;
+border: 5px solid black;
+top: 10;
+} {% endcomment %}
+
+.info-body h3 {
+font-size: 3.2vmin;
+color: #dadbbd;
+}
+
+.info-body-header > h3{
+color: white;
+font-size: clamp(0.5rem, 2vw, 1.5rem);
+color: #dadbbd;
+}
+
+h2{
+font-size: clamp(1rem, 3vw, 2rem);
+color: #dadbbd;
+}
+.disp{
+width: 140%;
+max-height: 440px;
+border: 0.1rem solid white;
+margin-right: 1em;
+border-radius: 1rem;
+padding:1rem;
+{% comment %} display: flex;
+flex-flow: column nowrap; 
+justify-content: space-around; {% endcomment %}
+overflow-y: scroll;
+-ms-overflow-style: none; /* IE and Edge */
+scrollbar-width: none; /* Firefox */
+}
+.disp::-webkit-scrollbar {
+display: none;
+}
+.bodycard{
+display: flex;
+/* align-items: center; */
+justify-content: space-between;
+/* position: relative; */
+}
+.disease-list{
+/* max-height: 97%; */
+max-height: 440px;
+overflow-y: scroll;
+-ms-overflow-style: none; /* IE and Edge */
+scrollbar-width: none; /* Firefox */
+width: 130%;
+}
+.disease-list::-webkit-scrollbar {
+display: none;
+}
+.disp-head{
+color: white;
+font-size: clamp(1rem, 4vw, 2rem);
+color: #dadbbd;
+}
+.disp-sym{
+font-size: 3vmin;
+color: #dadbbd;
+text-align: justify;
+}
+.disp-disp{
+font-size: 2.8vmin;;
+color: #dadbbd;
+text-align: justify;
+}
+hr{
+height:3px;
+border-width:0;
+color:white;
+background-color:white;
+}
+{% comment %} option{
+    background-color:
+} {% endcomment %}
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<div class="result-body">
+    <div class="cards" style="width: 73%;">
+        <div class="cards-heading">            
+            <b>Details</b>
+        </div>
+        <form  name="myForm" method="post" action="/services" onsubmit="return submitafter()">
+            {% csrf_token %}
+            <div class="info">
+                <div class="sno">
+                    1)
+                </div>
+                <div class="info-body">
+                    <div class="info-body-header">
+                    <p>
+                    <h2>
+                    Name
+                    </h2>        
+                    </p>
+                    </div>
+                    <input id="namelfeild" onkeyup="lname(this.value)" class="form-control bg-lite opacity-50" type="text" placeholder="Name" aria-label="default input example" style="width: 60%; margin-right:3em;" name="name">
+                </div>          
+            </div>
+            <div class="info">
+                <div class="sno">
+                2)
+                </div>
+                <div class="info-body">
+                    <div class="info-body-header">
+                    <p>
+                    <h2>
+                    Age
+                    </h2>        
+                    </p>
+                    </div>
+                    <select id="ageoptions" onchange="agefunc()" class="form-select bg-lite opacity-50 rounded" aria-label="Default select example" style="width: 60%; margin-right:3em;" name="ageselect">
+                        <option value="0">-- Select Age Category --</option>
+                                <option value="1" data-p="False">
+                                    0 - 28 d (newborn)
+                                </option>
+                                <option value="2" data-p="False">
+                                    29 d - 1 yr (infant)
+                                </option>
+                                <option value="3" data-p="False">
+                                    1 - 5 yrs (younger child)
+                                </option>
+                                <option value="4" data-p="False">
+                                    6 - 12 yrs  (older child)
+                                </option>
+                                <option value="5" data-p="True">
+                                    13 - 16 yrs (adolescent)
+                                </option>
+                                <option value="6" data-p="True">
+                                    17 - 29 yrs (young adult)
+                                </option>
+                                <option value="7" data-p="True">
+                                    30 - 39 yrs (adult)
+                                </option>
+                                <option value="8" data-p="True">
+                                    40 - 49 yrs (adult)
+                                </option>
+                                <option value="9" data-p="True">
+                                    50 - 64 yrs (adult)
+                                </option>
+                                <option value="10" data-p="False">
+                                    65 yrs - over (senior)
+                                </option>
+                    </select>
+                    {% comment %} <input class="form-control bg-lite opacity-50" type="text" placeholder="Default input" aria-label="default input example" style="width: 60%; margin-right:3em;"> {% endcomment %}
+                </div>          
+            </div>
+            <div class="info">
+                <div class="sno">
+                3)
+                </div>
+                <div class="info-body">
+                    <div class="info-body-header">
+                    <p>
+                    <h2>
+                    Sex
+                    </h2>        
+                    </p>
+                    </div>
+                    <div class="btn-group" role="group" aria-label="Basic radio toggle button group" style="width: 60%; margin-right:3em;">
+                        <input onclick="displayRadioValue()" type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" value="Female">
+                        <label class="btn btn-outline-warning" for="btnradio1">Female</label>
+                    
+                        <input onclick="displayRadioValue()" type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off" value="Male">
+                        <label class="btn btn-outline-light" for="btnradio2">Male</label>
+
+                        <input onclick="displayRadioValue()" type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off" value="Others">
+                        <label class="btn btn-outline-dark" for="btnradio3">Others</label>
+                    
+                        <input onclick="displayRadioValue()" type="radio" class="btn-check" name="btnradio" id="btnradio4" autocomplete="off" checked value="Prefer not to say">
+                        <label class="btn btn-outline-light" for="btnradio4">Prefer not to say</label>
+                    </div>
+                    {% comment %} <input class="form-control bg-lite opacity-50" type="text" placeholder="Default input" aria-label="default input example" style="width: 60%; margin-right:3em;"> {% endcomment %}
+                </div>          
+            </div>
+            <div class="info">
+                <div class="sno">
+                4)
+                </div>
+                <div class="info-body">
+                    <div class="info-body-header">
+                    <p>
+                    <h2>
+                    Email-ID
+                    </h2>        
+                    </p>
+                    </div>
+                    <input id="emailfeild" onkeyup="email(this.value)" class="form-control bg-lite opacity-50" type="text" placeholder="Email-ID" aria-label="default input example" style="width: 60%; margin-right:3em;" name="emailfeild">
+                </div>          
+            </div>
+            <div class="info">
+                <div class="sno">
+                5)
+                </div>
+                <div class="info-body">
+                    <div class="info-body-header">
+                    <p>
+                    <h2>
+                    Symptoms
+                    </h2>        
+                    </p>
+                    </div>
+                    <style>
+                        /* Dropdown Button */
+                        .dropbtn {
+                        background-color: #04AA6D;
+                        color: white;
+                        padding: 1rem 1rem;
+                        font-size: 20px;
+                        border: none;
+                        cursor: pointer;
+                        }
+
+                        /* Dropdown button on hover & focus */
+                        .dropbtn:hover, .dropbtn:focus {
+                        background-color: #3e8e41;
+                        }
+
+                        /* The search field */
+                        #myInput {
+                        box-sizing: border-box;
+                        {% comment %} background-image: url('searchicon.png'); {% endcomment %}
+                        background-position: 14px 12px;
+                        background-repeat: no-repeat;
+                        font-size: 1.2em;
+                        padding: 14px 20px 12px 45px;
+                        border: 1px solid #ddd;
+                        {% comment %} border-bottom: 1px solid #ddd; {% endcomment %}
+                        }
+                        /* The search field when it gets focus/clicked on */
+                        #myInput:focus {outline: 3px solid #ddd;}
+
+                        /* The container <div> - needed to position the dropdown content */
+                        .dropdown {
+                        margin-left:14.5rem;
+                        position: absolute;
+                        display: inline-block;
+                        width: 208%;
+                        }
+
+                        /* Dropdown Content (Hidden by Default) */
+                        .dropdown-content {
+                        display: none;
+                        position: absolute;
+                        background-color: rgba(197,72,84,0.9);
+                        min-width: 208%;
+                        border: 1px solid rgba(197,72,84,0.9);
+                        border-radius: 12px;
+                        z-index: 1;
+                        max-height:120px;
+                        overflow-y: scroll;
+                        -ms-overflow-style: none; /* IE and Edge */
+                        scrollbar-width: none; /* Firefox */
+                        font-size: 1.2em;
+                        }
+                        .dropdown-content::-webkit-scrollbar {
+                            display: none;
+                        }
+                        /* Links inside the dropdown */
+                        .dropdown-content p {
+                        color: black;
+                        padding: 5px 5px;
+                        text-decoration: none;
+                        display: block;
+                        min-width: 100%;
+                        }
+
+                        /* Change color of dropdown links on hover */
+                        .dropdown-content p:hover {background-color:rgba(197,72,84,0.9);}
+
+                        /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+                        .show {display:block;}
+                    </style>
+                    <div class="dropdown">
+                        <input onclick="myFunction()" id="myInput" onkeyup="filterFunction()" class="form-control dropbtn" type="text" placeholder="Type Symptoms" aria-label="default input example" style="width: 208%; margin-right:3em;color:white;">
+                        <div id="myDropdown" class="dropdown-content">
+                            <script type="text/javascript">
+                                {% comment %} var endpoint = "/api/chart/data/"; {% endcomment %}
+                                var x = {{ name | safe }};
+                                for(var i=0;i<x.length;i++)
+                                {
+                                  document.write("<p><input onclick=\"displayCheckedValue()\" class=\"form-check-input\" type=\"checkbox\" name=\"checks\" value=\""+x[i]+"\" id=\"flexCheckDefault"+x[i]+"\"><label class=\"form-check-label\" for=\"flexCheckDefault"+x[i]+"\" style=\"margin-left:1em\">"+x[i]+"</label><p>");
+                                }
+                                {% comment %} console.log(x); {% endcomment %}
+                              </script>
+                        </div>
+                    </div>
+                    <script type="text/javascript">
+                        /* When the user clicks on the button,
+                      toggle between hiding and showing the dropdown content */
+                      function myFunction() {
+                        document.getElementById("myDropdown").classList.toggle("show");
+                      }
+                      function filterFunction() {
+                        var input, filter, ul, li, a, i, c;
+                        input = document.getElementById("myInput");
+                        filter = input.value.toUpperCase();
+                        div = document.getElementById("myDropdown");
+                        //a = div.getElementsByTagName("a");
+                        a = div.getElementsByTagName("p");
+                        //c = div.getElementsById("btn-check-outlined");
+                        for (i = 0; i < a.length; i++) {
+                          //document.getElementById("input_btn-check-outlined-chills").style.visibility="hidden";
+                          txtValue = a[i].textContent || a[i].innerText;
+                          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                            a[i].style.display = "";
+                            //document.write(" "+a[i].innerText)
+                          } else {
+                            a[i].style.display = "none";
+                          }
+                        }
+                      }
+                    </script>
+                </div>      
+            </div>
+            <div style=" margin-top: 3rem;display: flex; justify-content: space-around; position: relative;">
+                <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                    <button type="submit" class="btn btn-danger btn-lg shadow">Submit</button>
+                    <button onclick="resetfunc()" type="reset" class="btn btn-success btn-lg shadow">Reset</button>
+                    <button type="button" class="btn btn-info btn-lg shadow" onclick="location.href = '/result';">Result</button>
+                  </div>
+                {% comment %} <button  type="submit" class="btn-lg btn-info shadow" style="margin-right:-25rem;">Submit</button>
+                <button onclick="resetfunc()" type="reset" class="btn-lg btn-success shadow ms-2" style="margin-right:10rem;">Reset</button> {% endcomment %}
+            </div>
+        </form>
+    </div>
+    <div class="cards" style="width: 25%;">
+        <div class="cards-heading">            
+            <b>H-Card</b>
+        </div>
+        <div>
+            <p style="white-space: normal;word-break: break-all; color: #dadbbd;"><h3 style="color: #dadbbd;">Name: </h3><h5 style="color: white; white-space: normal;word-break: break-all;"><span id="stitle"></span><span id="sname"></span></h5></p>
+            <p style="white-space: normal;word-break: break-all; color: #dadbbd;"><h3 style="color: #dadbbd;">Age: </h3><h5 style="color: white; white-space: normal;word-break: break-all;"><span id="sage"></span></h5></p>
+            <p style="white-space: normal;word-break: break-all; color: #dadbbd;"><h3 style="color: #dadbbd;">Sex: </h3><h5 style="color: white; white-space: normal;word-break: break-all;"><span id="ssex"></span></h5></p>
+            <p style="white-space: normal;word-break: break-all; color: #dadbbd;"><h3 style="color: #dadbbd;">Email-ID: </h3><h5 style="color: white; white-space: normal;word-break: break-all;"><span id="semail"></span></h5></p>
+            <p style="white-space: normal;word-break: break-all; color: #dadbbd;"><h3 style="color: #dadbbd;">Symptoms: </h3><h5 style="color: white; white-space: normal;word-break: break-all;"><span id="ssym"></span></h5></p>
+        </div>
+        {% comment %} <h3 style="color: #dadbbd;">Photo<br> Name:<span id="sname"></span><br>Age:<span id="sage"></span><br>Sex:<span id="ssex"></span><br>Email-ID:<span id="semail"></span><br>Symptoms:<span id="ssym"></span></h3> {% endcomment %}
+        <script type="text/javascript">
+            function lname(n) {
+                document.getElementById("sname").innerHTML = n;
+            }
+            function email(n) {
+                document.getElementById("semail").innerHTML = n;
+            }
+            function agefunc(){
+                var e = document.getElementById("ageoptions");
+	            var strUser = e.value; // 2
+                if(strUser==0){
+                    document.getElementById("sage").innerHTML = "";
+                }
+                else{
+	                strUser = e.options[e.selectedIndex].text; //test2
+                    document.getElementById("sage").innerHTML = strUser;
+                }
+            }
+            //name="btnradio"
+            function displayRadioValue() {
+                var ele = document.getElementsByName('btnradio');
+                  
+                for(i = 0; i < ele.length; i++) {
+                    if(ele[i].checked)
+                    {
+                        document.getElementById("ssex").innerHTML= ele[i].value;
+                        if(ele[i].value=="Male")
+                        document.getElementById("stitle").innerHTML= "Mr.";
+                        else if(ele[i].value=="Female")
+                        document.getElementById("stitle").innerHTML= "Ms.\\Mrs.";
+                        else if(ele[i].value=="Others")
+                        document.getElementById("stitle").innerHTML= "Mx.";
+                        else
+                        document.getElementById("stitle").innerHTML= "";
+                    }
+                }
+
+            }
+            function displayCheckedValue() {
+                var ele = document.getElementsByName('checks');
+                var str="";
+                for(i = 0; i < ele.length; i++) {
+                    if(ele[i].checked)
+                        if(str=="")
+                        str=str+ele[i].value;
+                        else
+                        str=str+", "+ele[i].value;
+                }
+                document.getElementById("ssym").innerHTML
+                            = str;
+            }
+            function resetfunc(){
+                document.getElementById("sname").innerHTML="";
+                document.getElementById("semail").innerHTML="";
+                document.getElementById("sage").innerHTML="";
+                document.getElementById("ssex").innerHTML="";
+                document.getElementById("ssym").innerHTML="";
+            }
+            function checkboxes(){
+                var inputElems = document.getElementsByTagName("input"),
+                count = 0;
+                for (var i=0; i<inputElems.length; i++) {
+                    if (inputElems[i].type === "checkbox" && inputElems[i].checked === true){
+                        count++;
+                    }
+                }
+                if(count<3){
+                    var s=3-count;
+                    alert("Give more symptoms!! Given Symptom count : "+count+". "+s+" more Symptom required.");
+                    return false;
+                }
+            }
+            function submitafter(){
+                var error="";
+                var e=0;
+                var n = document.forms["myForm"]["name"].value;
+                var email = document.forms["myForm"]["emailfeild"].value;
+                var inputElems = document.getElementsByTagName("input");
+                var o = document.getElementById("ageoptions");
+                var strUser = o.value;
+                var count = 0;
+                if (n == ""){
+                    error+="Name must be filled out. ";
+                    e += 1;
+                }
+                if(strUser=="0"){
+                    error+="Age not selected !! ";
+                    e+=1;
+                }
+                if (email == ""){
+                    error+="Email must be filled out. ";
+                    e += 1;
+                }
+                for (var i=0; i<inputElems.length; i++) {
+                    if (inputElems[i].type === "checkbox" && inputElems[i].checked === true){
+                        count++;
+                    }
+                }
+                if(count<3){
+                    var s=3-count;
+                    error+="Give more symptoms!! Given Symptom count : "+count+". "+s+" more Symptom required. ";
+                    e+=1;
+                }
+                if(e>0){
+                    alert(error+"\n No of errors : "+e);
+                    return false;
+                }
+                else
+                return true;
+            }
+            //setTimeout("location.href = '/result';",5000);
+        </script>
+    </div>
+</div>
+{% endblock body %}

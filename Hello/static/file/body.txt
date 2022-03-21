@@ -1,0 +1,24 @@
+Dear Anna,
+
+This is to inform you that as per your arising symptoms, as you have asked us to book an appointment here the confirmation mail.
+Your appointment with XYZ hospital has been booked successfully. The details for the same is attached below.
+
+Details of Appoints as follows:
+
+Date of Booking: 17-03-2022
+Time of Booking: 01:00 pm(or in 24 hrs)
+Appointment Date: 17-03-2022
+Appointment Time: 6:00 pm(or in 24 hrs)
+Doctor Name: Dr. BBC
+Venue: AIMS hospital
+Location:- XYZ, #1-60/10, ABC Nagar, Yunlanga, Volanga, Andikandra Presist 531167
+Patient Name: Ayush
+Patient Age: 18
+Patient Sex: Male
+Patient Symptoms: (User Provided symptoms list)
+Possible disases according to the provided symptoms.
+(Disease list)
+
+Thanks
+With regards,
+Team HAPR

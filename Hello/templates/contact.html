@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %}Contact{% endblock title %}
+{% block body %}
+<div class="container" style="margin-top:5em;">
+    <img src="/static/img/1.jpeg" class="rounded w-80 d-block mx-auto" alt="...">
+</div>
+
+<div class="container px-4">
+  <h1 class="display-6 mt-4 shadow p-3 mb-5 mx-5 bg-danger text-white rounded-pill"><b>Feedback</b></h1>
+<form class="row g-3" method="post" action="/contact">
+    {% csrf_token %}
+    <div class="col-12">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" class="form-control" id="name" name="name" placeholder="Enter Your Name">
+    </div>
+    <div class="col-md-6">
+      <label for="email" class="form-label">Email</label>
+      <input type="email" class="form-control" id="email" name="email" placeholder="Enter Your Email">
+    </div>
+    <div class="col-md-6">
+      <label for="phone" class="form-label">Phone</label>
+      <input type="phone" class="form-control" id="phone" name="phone" placeholder="Enter Your Phone no">
+    </div>
+    <div class="col-12">
+        <label for="dis" class="form-label">Feedback</label>
+        <textarea class="form-control" id="dis" name="dis" rows="3" placeholder="Enter your Feedback here"></textarea>
+    </div>
+    <div class="col-12 mb-3">
+      <button type="submit" class="btn btn-danger shadow">Submit</button>
+      <button type="reset" class="btn btn-success shadow ms-2">Reset</button>
+    </div>
+  </form>
+</div>
+
+{% endblock body %}

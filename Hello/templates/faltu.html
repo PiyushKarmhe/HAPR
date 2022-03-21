@@ -1,0 +1,102 @@
+{% comment %} <p>Hi my name is {{name}} and i m {{dis}}</p> {% endcomment %}
+<select class="form-select" aria-label="Default select example">
+    <option selected>Open this select menu</option>
+    <option value="1">{{name}}</option>
+    <option value="2">{{dis}}</option>
+    <option value="3">Three</option>
+  </select>
+  {% comment %} <select class="form-select" aria-label="Default select example">
+    <script language="javascript" type="text/javascript"> 
+    
+    for(var i=0;i<=name.length;i++)
+    {
+        document.write("<option>"+{{name}}+"</option>");
+    }
+    </script>
+    </select> {% endcomment %}
+    {% comment %} <script type="text/javascript">
+      // get a HTMLCollection of elements in the page
+      let collection = document.getElementsByTagName("name");
+  
+      // convert to an array using Array.from()
+      Array.from(collection).forEach(function(element) {
+          console.log(element)
+      });
+  </script> {% endcomment %}
+  <select class="form-select" aria-label="Default select example">
+  <script type="text/javascript">
+    {% comment %} var endpoint = "/api/chart/data/"; {% endcomment %}
+    var x = {{ name | safe }};
+    for(var i=0;i<x.length;i++)
+    {
+        document.write("<option>"+x[i]+"</option>");
+    }
+    {% comment %} console.log(x); {% endcomment %}
+  </script>
+  </select> 
+  <div class="dropdown">
+    <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+    <div id="myDropdown" class="dropdown-content">
+      <form  method="post" action="/">
+        {% csrf_token %}
+      <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+      <script type="text/javascript">
+        {% comment %} var endpoint = "/api/chart/data/"; {% endcomment %}
+        var x = {{ name | safe }};
+        for(var i=0;i<x.length;i++)
+        {
+          //document.write("<p><input type=\"checkbox\" class=\"btn-check\" id=\"btn-check-outlined-"+x[i]+"\"autocomplete=\"off\"><label class=\"btn btn-outline-primary text-align-center\" for=\"btn-check-outlined-"+x[i]+"\">"+x[i]+"</label><br><p>");
+          document.write("<p><input class=\"form-check-input\" type=\"checkbox\" name=\"checks\" value=\""+x[i]+"\" id=\"flexCheckDefault"+x[i]+"\"><label class=\"form-check-label\" for=\"flexCheckDefault"+x[i]+"\">"+x[i]+"</label><br><p>");
+        }
+        console.log(x);
+      </script>
+      <button type="submit" class="btn btn-danger shadow">Submit</button>
+      </form>
+      {% comment %} <a href="#about">About</a>
+      <a href="#base">Base</a>
+      <a href="#blog">Blog</a>
+      <a href="#contact">Contact</a>
+      <a href="#custom">Custom</a>
+      <a href="#support">Support</a>
+      <a href="#tools">Tools</a> {% endcomment %}
+    </div>
+  </div>
+  <script type="text/javascript">
+    /* When the user clicks on the button,
+  toggle between hiding and showing the dropdown content */
+  function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+  }
+  
+  function filterFunction() {
+    var input, filter, ul, li, a, i, c;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    div = document.getElementById("myDropdown");
+    //a = div.getElementsByTagName("a");
+    a = div.getElementsByTagName("p");
+    //c = div.getElementsById("btn-check-outlined");
+    for (i = 0; i < a.length; i++) {
+      //document.getElementById("input_btn-check-outlined-chills").style.visibility="hidden";
+      txtValue = a[i].textContent || a[i].innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        a[i].style.display = "";
+        //document.write(" "+a[i].innerText)
+      } else {
+        a[i].style.display = "none";
+      }
+    }
+  }
+  </script>
+  {% comment %} <form id="formvisiblity">
+    <input id="toggle" type="submit" text="submit" name="accept" /><br>
+    <input type="checkbox" class="btn-check" id="btn-check-outlined" autocomplete="off">
+    <label class="btn btn-outline-primary" for="btn-check-outlined">Single toggle</label> 
+  </form>
+  <script type="text/javascript">
+    window.onload=function(){
+      document.getElementById("toggle").style.visibility="hidden";
+      //document.getElementById("btn btn-outline-primary").style.visibility="hidden";
+  }
+  </script> {% endcomment %}
+  {% comment %} <input class=\"form-check-input\" type=\"checkbox\" value=\"flexCheckDefault"+x[i]+"\" id=\"flexCheckDefault"+x[i]+"\"><label class=\"form-check-label\" for=\"flexCheckDefault"+x[i]+"\">Default checkbox</label> {% endcomment %}

@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+{% block title %}Services{% endblock title %}
+{% block body %}
+    {% comment %} <h1><p style="margin-top: 10em;">This is my Service Page</p></h1> {% endcomment %}
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <div class="container1">
+    <div class="card" data-tilt data-tilt-scale="0.9"  >
+        <div class=>
+            <h1 class="basic">
+
+                <b><br><h2> Basic Details  <i class="fa fa-stethoscope" style="font-size:60px;color:rgba(14, 1, 1, 0.87)"></i></h2></b></h1>
+        </div>
+        <form>
+            <div class="container">
+                <div class="even">
+                    <i class="fa fa-address-card-o" style="font-size:60px;color:rgba(17, 15, 15, 0.87)"></i>
+                    <label><b><h1 class="rounded-pill"><span class="badge rounded-pill text-dark bg-opacity-75 mx-2 my-1 shadow">Name</h6></span></b></label>
+                    
+                    <input type="text"name="Firstname" size="50" placeholder="Enter your name" required/>
+                    
+                </div>
+                <div class="even" style="padding-right: 220px;" >
+                    <i class="fa fa-calendar" style="font-size:60px;color:rgba(17, 15, 15, 0.87)"></i>
+                    <label><b><h1 class="rounded-pill"><span class="badge rounded-pill text-dark bg-opacity-75 mx-2 my-1 shadow">Age</h1></span></b></label>
+                    <select name="AgeGroup" id="agegroup-input" class="persist field__input" data-key="ageGroup" required>
+                        <option value="0">-- Select --</option>
+                            <option value="1" data-p="False">
+                                0 - 28 d (newborn)
+                            </option>
+                            <option value="2" data-p="False">
+                                29 d - 1 yr (infant)
+                            </option>
+                            <option value="3" data-p="False">
+                                1 - 5 yrs (younger child)
+                            </option>
+                            <option value="10" data-p="False">
+                                6 - 12 yrs  (older child)
+                            </option>
+                            <option value="4" data-p="True">
+                                13 - 16 yrs (adolescent)
+                            </option>
+                            <option value="7" data-p="True">
+                                17 - 29 yrs (young adult)
+                            </option>
+                            <option value="5" data-p="True">
+                                30 - 39 yrs (adult)
+                            </option>
+                            <option value="8" data-p="True">
+                                40 - 49 yrs (adult)
+                            </option>
+                            <option value="9" data-p="True">
+                                50 - 64 yrs (adult)
+                            </option>
+                            <option value="6" data-p="False">
+                                65 yrs - over (senior)
+                            </option>
+                    </select>
+                </div>
+                <div class="even" style="padding-right: 400px;">
+                    <i class="fa fa-check-square-o" style="font-size:60px;color:rgba(17, 15, 15, 0.87)"></i>
+                    <label><b><h1 class="rounded-pill"><span class="badge rounded-pill text-dark bg-opacity-75 mx-2 my-1 shadow">Gender</h1></span></b></label>
+                    
+                    <div id="Gender">
+                        <button type="button" class="btn btn-outline-info" id="male" value="male" title="male button"  style="border-top-width: 3px;border-right-width: 3px; border-left-width: 3px;border-bottom-width: 3px; margin-left: 10px;">
+                            <span ><b> Male </b></span><i class="fa fa-mars" style="font-size:48px;color:rgb(32, 29, 29)"></i>
+                            
+                        </button>
+                        <button type="button" class="btn btn-outline-warning" id="female" value="female" title="female button" style="border-top-width: 3px;border-right-width: 3px; border-left-width: 3px;border-bottom-width: 3px; margin-left: 5px;">
+                            <span><b> Female </b></span>
+                            <i class="fa fa-venus" style="font-size:48px;color:rgb(32, 29, 29)"></i>
+                        </button>
+                        <button type="button" class="btn btn-outline-danger" id="Prefer" value="Not to say" title="Prefer not to say button" style="border-top-width: 3px;border-right-width: 3px; border-left-width: 3px;border-bottom-width: 3px; margin-left: 5px;">
+                            <span><b> Others</b></span> <i class="fa fa-intersex" style="font-size:48px;color:rgb(32, 29, 29)"></i>
+                        </button>
+                        <button type="button" class="btn btn-outline-danger" id="Prefer" value="Not to say" title="Prefer not to say button" style="border-top-width: 3px;border-right-width: 3px; border-left-width: 3px;border-bottom-width: 3px; margin-left: 5px;">
+                            <span><b> Prefer not to say</b></span> <i class="fa fa-genderless" style="font-size:48px;color:rgb(32, 29, 29)"></i>
+                        </button>
+                        
+                </div>
+                </div>
+                
+                <div class="symptom" style="text-align: center; color: black ;">
+                    <h3>
+                    <b>Enter your Symptoms</b> 
+                    </h3>
+                    <input type="text"name="symptom" size="50" placeholder="Enter your symptom" id="dropdownMenuButton1" data-bs-toggle="dropdown" required/>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item" href="#">cough</a></li>
+                        <li><a class="dropdown-item" href="#">fever</a></li>
+                        <li><a class="dropdown-item" href="#">pain</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <button class="button-1" style="margin-top: 20px; margin-bottom: 20px;">Submit</button>
+                    
+                </div>
+                
+
+            </div>
+        </form>
+    </div>
+    </div>
+    <script src="vanilla-tilt.js"></script>
+{% endblock body %}
