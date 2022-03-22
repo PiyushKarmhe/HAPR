@@ -10,8 +10,8 @@ def send_mail(name,age,email,sex,symptom,diseases):
 
     # with open('password.txt', 'r') as x:    # password stored in file in order to not violate the code
     #     password = x.read()
-    password="9494708899"
-    server.login('hapr.service@gmail.com', password) # login
+    password="password"
+    server.login('emailhere', password) # login
 
     subject = "Appointment Booking confirmation" #subject
 
